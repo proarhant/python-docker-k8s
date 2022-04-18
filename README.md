@@ -1,11 +1,13 @@
 # python-docker-k8s
-Demo of a sample Python Flask web app running on Kubernetes
+Demo of a sample Python Flask web app running on Kubernetes.
+
+The web application will be containerized in Docker first.
+I will then deploy this Dockerized web app in K8s using LoadBalancer service. For the demo purpose, a minikube K8s single node cluster will be used.
 
 # Python applicaiton in Flask framework
-This is a sample python Flask application that displays its current environment (e.g. Production, Development, Staging, etc) along with the port it listens to.
+This is a sample python Flask application that displays both in `console and web browser` its current environment (e.g. Production, Development, Staging, etc) along with the port it listens to.
 
-# Dir structure
-
+# Dir structure for this containerized application
 ```
 [cloudadm@cloud98 python-docker-k8s]# tree -a
 .
@@ -18,13 +20,13 @@ This is a sample python Flask application that displays its current environment 
     └── app.py
 
 1 directory, 6 files
-[root@cloud23 python-docker-k8s]#
+[cloudadm@cloud98 python-docker-k8s]#
 ```
 
 # .dockerignore
 All markdown files except README.md are excluded.
 
-`bigDummyFile.md` which is a dummy file created to show the validity of .dockerignore.
+`bigDummyFile.md` which is a dummy file created to show the validity of .dockerignore. Feel free to adjust the command line options I used to create this 127M dummy file.
 
 ```
 [cloudadm@cloud98 python-docker-k8s]# dd if=/dev/zero of=./bigDummyFile.md bs=4k iflag=fullblock,count_bytes count=127M
@@ -34,6 +36,9 @@ All markdown files except README.md are excluded.
 ```
 
 # Build & Run examples:
+
+The arguements in `docker run` command will override `container port` and `environment` of the web app e.g. `-e production --host 0.0.0.0:8888`
+
 ```
 docker build --tag flask-docker .
 docker run --name testCont -p 5000:5000 flask-docker 
@@ -106,5 +111,8 @@ Current environment :  development  Interface:  0.0.0.0  Port:  5000
 Current environment is >>> development <<< listening on [0.0.0.0:5000]
 [cloudadm@cloud98 ~]#
 
-
 ```
+![image](https://user-images.githubusercontent.com/2681229/163869040-ae781125-778f-4fea-a277-135a9489fc7c.png)
+![image](https://user-images.githubusercontent.com/2681229/163870888-b62e1892-3402-4f26-877e-b6abbf0f3f0f.png)
+
+The application also displays the output in the browser e.g. http://127.0.0.1:5000 
