@@ -24,9 +24,14 @@ This is a sample python Flask application that displays both in `console and web
 ```
 
 # .dockerignore
-All markdown files except README.md are excluded.
+In this demo, the `.dockerignore` will exclude all markdown files except README.md.
 
-`bigDummyFile.md` which is a dummy file created to show the validity of .dockerignore. Feel free to adjust the command line options I used to create this 127M dummy file.
+`bigDummyFile.md` is a dummy file created to show the validity of `.dockerignore`. 
+
+We exclude files and directories by adding a `.dockerignore` file (by matchinng patterns in it) to the context directory. This increases the build’s 
+performance, helps to avoid unnecessarily trasferring large or sensitive files and directories to images using `ADD` or `COPY`.
+
+Feel free to adjust the command line options I used to create this 127M dummy file.
 
 ```
 [cloudadm@cloud98 python-docker-k8s]# dd if=/dev/zero of=./bigDummyFile.md bs=4k iflag=fullblock,count_bytes count=127M
