@@ -30,7 +30,7 @@ In this demo, the `.dockerignore` will exclude all markdown files except `README
 
 `bigDummyFile.md` is a dummy file created to show the validity of `.dockerignore`. 
 
-We exclude files and directories by adding a `.dockerignore` file (by matchinng patterns in it) to the context directory. This increases the build’s 
+We exclude files and directories by adding a `.dockerignore` file (Docker matches patterns in it) to the context directory. This increases the build’s 
 performance, helps to avoid unnecessarily trasferring large or sensitive files and directories to images using `ADD` or `COPY`.
 
 Feel free to adjust the command line options I used to create this 127M dummy file.
@@ -53,9 +53,7 @@ python3.7 ./source/app.py -e production --host 0.0.0.0:5678
 Please note the example command to execute the app used my local environment whcih has `Python 3.7` installed.
 
 Both the `console` and `web browser` will display the output from the app. The screen capture below shows such results from the app excuted locally.
-
-![image](https://user-images.githubusercontent.com/2681229/163913987-8b9714d6-6168-4a5f-b7f6-dae05a9c56ae.png)
-
+![image](https://user-images.githubusercontent.com/2681229/164034562-61507d6b-9bf2-4db4-b9bf-3690516e1409.png)
 
 # Build & Run examples in Docker
 Lets get this app running and tested within `less than a minute`! Thank you Docker!
