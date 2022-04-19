@@ -1,11 +1,13 @@
 # python-docker-k8s
 Demo of a sample `Python Flask` web app running on `Kubernetes`.
 
-This web application has been tested in local `Python` environment and then containerized in `Docker`.
-I will then deploy this Dockerized web app in `Kubernetes` using `LoadBalancer` service. For the demo purpose, a `minikube` K8s cluster will be used.
+This web application has been tested in local `Python` environment and then containerized in `Docker`. I will deploy this Dockerized web app in `Kubernetes` using `LoadBalancer` service. For the demo purpose, a `minikube` K8s cluster will be used.
 
 # Python applicaiton in Flask framework
-This is a sample `Python Flask` application that displays both in `console and web browser` its current environment (e.g. Production, Development, Staging, etc) along with the port it listens to.
+This is a sample `Python Flask` application that displays both in `console and web browser` its current `mode of environment` (e.g. Production, Development, Staging, etc) along with the `port` it listens to.
+
+The following snippet of the code store these two piece of information: 
+https://github.com/proarhant/python-docker-k8s/blob/862b019cfbbb01ce1797a355c4f07ab6a814151e/source/app.py#L5-L11
 
 # Dir structure for this containerized application
 ```
@@ -50,7 +52,7 @@ python3.7 ./source/app.py -e production --host 0.0.0.0:5678
 
 Please note the example command to execute the app used my local environment whcih has `Python 3.7` installed.
 
-Both the `console` and `web browser` will display the output from the app. THe screen capture below shows such results from the app excuted locally.
+Both the `console` and `web browser` will display the output from the app. The screen capture below shows such results from the app excuted locally.
 
 ![image](https://user-images.githubusercontent.com/2681229/163913987-8b9714d6-6168-4a5f-b7f6-dae05a9c56ae.png)
 
