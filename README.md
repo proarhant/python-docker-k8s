@@ -1,11 +1,11 @@
 # python-docker-k8s
-Demo of a sample Python Flask web app running on Kubernetes.
+Demo of a sample `Python Flask` web app running on `Kubernetes`.
 
-The web application will be containerized in Docker first.
-I will then deploy this Dockerized web app in K8s using LoadBalancer service. For the demo purpose, a minikube K8s single node cluster will be used.
+This web application has been tested in local `Python` environment and then containerized in `Docker`.
+I will then deploy this Dockerized web app in Kubernetes using `LoadBalancer` service. For the demo purpose, a `minikube` K8s cluster will be used.
 
 # Python applicaiton in Flask framework
-This is a sample python Flask application that displays both in `console and web browser` its current environment (e.g. Production, Development, Staging, etc) along with the port it listens to.
+This is a sample `Python Flask` application that displays both in `console and web browser` its current environment (e.g. Production, Development, Staging, etc) along with the port it listens to.
 
 # Dir structure for this containerized application
 ```
@@ -24,7 +24,7 @@ This is a sample python Flask application that displays both in `console and web
 ```
 
 # .dockerignore
-In this demo, the `.dockerignore` will exclude all markdown files except README.md.
+In this demo, the `.dockerignore` will exclude all markdown files except `README.md`.
 
 `bigDummyFile.md` is a dummy file created to show the validity of `.dockerignore`. 
 
@@ -56,7 +56,7 @@ Both the `console` and `web browser` will display the output from the app. THe s
 
 
 # Build & Run examples in Docker
-Lets get the app running and tested within less than a minute!
+Lets get this app running and tested within less than a minute!
 
 ```
 git clone https://github.com/proarhant/python-docker-k8s.git
