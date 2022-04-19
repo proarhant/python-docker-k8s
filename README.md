@@ -1,7 +1,7 @@
 # python-docker-k8s
 Demo of a sample `Python Flask` web app running on `Kubernetes`.
 
-This web application has been tested in local `Python` environment and then containerized in `Docker`. I will deploy this Dockerized web app in `Kubernetes` using `LoadBalancer` service. For the demo purpose, a `minikube` K8s cluster will be used.
+This web application has been tested in local `Python` environment and then containerized in `Docker`. For demo purpose, I will deploy this Dockerized web app in `Kubernetes` using `LoadBalancer` service in a `minikube` K8s cluster. In production environment, we mostly use `Ingress` that exposes HTTP and HTTPS routes from outside the K8s cluster to services within the cluster.
 
 # Python applicaiton in Flask framework
 This is a sample `Python Flask` application that displays both in `console and web browser` its current `mode of environment` (e.g. Production, Development, Staging, etc) along with the `port` it listens to.
