@@ -40,20 +40,42 @@ Feel free to adjust the command line options I used to create this 127M dummy fi
 133169152 bytes (133 MB) copied, 0.194471 s, 685 MB/s
 ```
 
-# Build & Run examples:
+# Run locally
+```
+git clone https://github.com/proarhant/python-docker-k8s.git
+cd python-docker-k8s
+pip3 install -r requirements.txt
+python3.7 ./source/app.py -e production --host 0.0.0.0:5678
+```
 
-The arguements in `docker run` command will override `container port` and `environment` of the web app e.g. `-e production --host 0.0.0.0:8888`
+Please note the example command to execute the app used my local environment whcih has `Python 3.7` installed.
+
+Both the `console` and `web browser` will display the output from the app. THe screen capture below shows such results from the app excuted locally.
+
+![image](https://user-images.githubusercontent.com/2681229/163913987-8b9714d6-6168-4a5f-b7f6-dae05a9c56ae.png)
+
+
+# Build & Run examples in Docker
+Lets get the app running and tested within less than a minute!
 
 ```
+git clone https://github.com/proarhant/python-docker-k8s.git
+cd python-docker-k8s
 docker build --tag flask-docker .
-docker run --name testCont -p 5000:5000 flask-docker 
+docker run --name flask-app -p 5000:5000 flask-docker
 curl localhost:5000
+```
 
+The demo code facilitates to choose values for the port and mode of environement.
+The two arguements in `docker run` command for this demo code will override `container port` and `environment` of the web app e.g. `-e production --host 0.0.0.0:8888`
+
+```
 docker run --name testCont -p 8888:8888 flask-docker -e production --host 0.0.0.0:8888 
 docker run -p 8888:8888 flask-docker -e staging --host 0.0.0.0:8888
 curl localhost:8888
 ```
 
+The snippets of the commands used for the demo and screenshots displaying the output from the app are captured below.
 ```
 [cloudadm@cloud98 python-docker-k8s]# docker build --tag flask-docker .
 Sending build context to Docker daemon   7.68kB
